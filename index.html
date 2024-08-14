@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Kalkulator BMI</title>
+		<link rel="stylesheet" href="/css/styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<main>
+			<!--  Start Kalkulator BMI-->
+			<aside id="left">
+				<header>
+					<p>Kalkulator BMI</p>
+				</header>
+				<article>
+					<p>
+						Berat badan ideal adalah impian semua orang. Tidak hanya memiliki
+						bentuk tubuh yang menunjang penampilan, berat badan ideal juga
+						menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung
+						sekarang dengan kalkulator BMI berikut ini!
+					</p>
+				</article>
+				<form onsubmit="return hitungBmi()">
+					<div class="radio-gender">
+						<label for="gender">Jenis Kelamin</label>
+						<div>
+							<span>
+								<input type="radio" id="pria" value="pria" name="gender" />
+								<label for="pria">Pria</label>
+							</span>
+							<span>
+								<input type="radio" id="wanita" value="wanita" name="gender" />
+								<label for="wanita">Wanita</label>
+							</span>
+						</div>
+					</div>
+
+					<div>
+						<div class="form-input">
+							<div class="form-input">
+								<label for="tinggiBadan">Tinggi Badan</label>
+								<input
+									type="number"
+									id="tinggiBadan"
+									name="tinggiBadan"
+									placeholder="Tinggi Badan (cm)"
+								/>
+							</div>
+							<label for="beratBadan">Berat Badan</label>
+							<input
+								type="number"
+								id="beratBadan"
+								name="beratBadan"
+								placeholder="Berat Badan (kg)"
+							/>
+						</div>
+						<div class="form-input">
+							<label for="usia">Usia</label>
+							<input
+								type="number"
+								id="usia"
+								name="usia"
+								placeholder="Usia (tahun)"
+							/>
+						</div>
+					</div>
+					<div class="btn">
+						<button type="submit">Hitung</button>
+						<button type="button" onclick="resetHasil()" id="reset">
+							Reset
+						</button>
+					</div>
+				</form>
+			</aside>
+			<!--  End Kalkulator BMI-->
+
+			<!--  Start Hasil Kalkulasi BMI-->
+			<aside id="right">
+				<header>
+					<p>Hasil Kalkulasi BMI</p>
+				</header>
+				<div class="result">
+					<div class="skor-wrapper">
+						<p class="skor">0.0</p>
+					</div>
+					<div class="status-wrapper">
+						<p class="status">Hitung BMI</p>
+					</div>
+				</div>
+				<article>
+					<div class="penjelasan">
+						<p>Penjelasan :</p>
+					</div>
+					<div class="penyakit">
+						<p>Resiko penyakit yang mungkin kamu alami :</p>
+						<ul class="list-penyakit"></ul>
+					</div>
+				</article>
+			</aside>
+			<!--  End Hasil Kalkulasi BMI-->
+		</main>
+		<script src="js/script.js"></script>
+	</body>
+</html>

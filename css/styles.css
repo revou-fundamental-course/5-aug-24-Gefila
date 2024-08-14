@@ -1,0 +1,214 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: poppins;
+}
+
+main {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100vh;
+}
+
+/* Start Kalkulator BMI */
+
+aside {
+	padding: 2.7rem 3.5rem;
+	width: 50%;
+	background-color: cornsilk;
+}
+
+article p {
+	text-align: justify;
+	font-weight: 500;
+	font-size: 0.9rem;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-size: 1.7rem;
+	margin-bottom: 0.8rem;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	background-color: lightblue;
+	padding: 1rem;
+	margin-top: 0.8rem;
+	border-radius: 1rem;
+}
+
+input {
+	border: none;
+	padding: 0.5rem;
+	margin-bottom: 0.5rem;
+	border-radius: 0.5rem;
+}
+
+input:focus {
+	outline: none;
+}
+
+.radio-gender {
+	display: flex;
+	flex-direction: column;
+}
+
+form .form-input {
+	display: flex;
+	flex-direction: column;
+}
+
+.btn {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.btn button {
+	flex-grow: 1;
+	padding: 0.5rem;
+	margin-top: 0.5rem;
+	border: none;
+	border-radius: 0.5rem;
+}
+
+/* End Kalkulator BMI*/
+
+/* Start hasil kalkulasi BMI  */
+
+aside#right {
+	background-color: lightblue;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container-skor {
+	display: flex;
+	flex-direction: row;
+}
+
+.result {
+	display: flex;
+	flex-direction: row;
+	border-radius: 1rem;
+}
+
+.result > div {
+	color: white;
+	font-size: 1.5rem;
+	background-color: rgb(192, 67, 67);
+	min-width: 10rem;
+	min-height: 5rem;
+}
+
+.skor {
+	font-weight: bold;
+	font-size: 4rem;
+}
+
+.status {
+	font-weight: 600;
+}
+
+.skor-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1rem 0 0 1rem;
+	padding: 1rem 0 1rem 1rem;
+}
+
+.status-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	padding: 1rem 1rem 1rem 0;
+	border-radius: 0 1rem 1rem 0;
+}
+
+.penjelasan {
+	margin-top: 1rem;
+}
+.penjelasan p {
+	font-weight: 600;
+	text-align: justify;
+	font-size: 1.5rem;
+	text-align: justify;
+}
+
+.penyakit {
+	margin-top: 1rem;
+}
+
+.penyakit p {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: red;
+	text-align: center;
+}
+
+ul li {
+	list-style-type: square;
+	list-style-position: inside;
+	text-align: justify;
+}
+
+/* End hasil kalkulasi BMI  */
+
+/* RESPONSIVE IPAD */
+@media screen and (max-width: 768px) {
+	main {
+		flex-direction: column;
+	}
+
+	aside {
+		width: 100%;
+		height: 100%;
+	}
+
+	aside#right {
+		width: 100%;
+	}
+
+	.skor-wrapper {
+		border-radius: 1rem 0 0 1rem;
+		padding: 0.1rem 0 0.1rem 0.1rem;
+	}
+
+	.status-wrapper {
+		padding: 0.1rem 0.1rem 0.1rem 0;
+		border-radius: 0 1rem 1rem 0;
+	}
+
+	.skor {
+		font-size: 2rem;
+	}
+}
+
+/* RESPONSIVE MOBILE */
+
+@media screen and (max-width: 425px) {
+	.result > div {
+		min-width: 8rem;
+		min-height: 4rem;
+	}
+
+	main {
+		height: auto;
+	}
+
+	aside {
+		padding: 1rem;
+	}
+}

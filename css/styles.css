@@ -85,10 +85,16 @@ div span label {
 	align-items: center;
 	justify-content: center;
 	min-width: 120px;
+	transition: 0.3s all;
+}
+
+div span label:hover {
+	background-color: rgb(42, 83, 172);
+	color: white;
 }
 
 div span input[type="radio"]:checked + label{
-	background-color: rgb(231, 24, 24);
+	background-color: rgb(0, 59, 185);
 	color: white;
 }
 
@@ -109,12 +115,18 @@ form .form-input {
 	gap: 0.5rem;
 }
 
+.btn button[type="submit"] {
+	background-color: rgb(0, 59, 185);
+	color: white;
+}
+
 .btn button {
 	flex-grow: 1;
 	padding: 0.5rem;
 	margin-top: 0.5rem;
 	border: none;
 	border-radius: 0.5rem;
+	cursor: pointer;
 }
 
 /* End Kalkulator BMI*/

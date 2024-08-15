@@ -27,15 +27,15 @@
 						sekarang dengan kalkulator BMI berikut ini!
 					</p>
 				</article>
-				<form onsubmit="return hitungBmi()">
+				<form onsubmit="return hitungBmi()" method="post">
 					<div class="radio-gender">
 						<label for="gender">Jenis Kelamin</label>
 						<div>
-							<span>
+							<span class="radio-item">
 								<input type="radio" id="pria" value="pria" name="gender" />
 								<label for="pria">Pria</label>
 							</span>
-							<span>
+							<span class="radio-item">
 								<input type="radio" id="wanita" value="wanita" name="gender" />
 								<label for="wanita">Wanita</label>
 							</span>
@@ -44,15 +44,15 @@
 
 					<div>
 						<div class="form-input">
-							<div class="form-input">
-								<label for="tinggiBadan">Tinggi Badan</label>
-								<input
-									type="number"
-									id="tinggiBadan"
-									name="tinggiBadan"
-									placeholder="Tinggi Badan (cm)"
-								/>
-							</div>
+							<label for="tinggiBadan">Tinggi Badan</label>
+							<input
+								type="number"
+								id="tinggiBadan"
+								name="tinggiBadan"
+								placeholder="Tinggi Badan (cm)"
+							/>
+						</div>
+						<div class="form-input">
 							<label for="beratBadan">Berat Badan</label>
 							<input
 								type="number"
@@ -86,7 +86,7 @@
 				<header>
 					<p>Hasil Kalkulasi BMI</p>
 				</header>
-				<div class="result">
+				<div class="result animasi">
 					<div class="skor-wrapper">
 						<p class="skor">0.0</p>
 					</div>
@@ -95,11 +95,12 @@
 					</div>
 				</div>
 				<article>
-					<div class="penjelasan">
-						<p>Penjelasan :</p>
+					<div class="penjelasan animasi">
+						<label>Penjelasan :</label>
+						<p></p>
 					</div>
-					<div class="penyakit">
-						<p>Resiko penyakit yang mungkin kamu alami :</p>
+					<div class="penyakit animasi">
+						<p>Risiko penyakit yang mungkin kamu alami :</p>
 						<ul class="list-penyakit"></ul>
 					</div>
 				</article>

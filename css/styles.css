@@ -1,3 +1,7 @@
+:root{
+	--primary-color:#fdf0d5;
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -17,10 +21,17 @@ main {
 aside {
 	padding: 2.7rem 3.5rem;
 	width: 50%;
-	background-color: cornsilk;
 }
 
-article p {
+aside#left{
+	background-color: var(--primary-color);
+}
+
+article{
+	width: 100%;
+}
+
+article p{ 
 	text-align: justify;
 	font-weight: 500;
 	font-size: 0.9rem;
@@ -57,9 +68,35 @@ input:focus {
 	outline: none;
 }
 
+
+div span input[type="radio"]{
+	display: none;
+}
+
+div span label {
+	color: black;
+	padding: 5px 10px;
+	border-radius: 0.5rem;
+	background-color: white;
+	border: rgb(46, 46, 46) solid 1px;
+	cursor: pointer;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 120px;
+}
+
+div span input[type="radio"]:checked + label{
+	background-color: rgb(231, 24, 24);
+	color: white;
+}
+
+
 .radio-gender {
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 0.5rem;
 }
 
 form .form-input {
@@ -140,11 +177,17 @@ aside#right {
 .penjelasan {
 	margin-top: 1rem;
 }
-.penjelasan p {
+.penjelasan label {
 	font-weight: 600;
 	text-align: justify;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	text-align: justify;
+}
+
+.penjelasan p {
+	font-size: .9rem;
+	text-align: justify;
+	font-weight: 500;
 }
 
 .penyakit {
@@ -152,15 +195,17 @@ aside#right {
 }
 
 .penyakit p {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	font-weight: 600;
 	color: red;
-	text-align: center;
+	text-align: justify;
 }
 
 ul li {
 	list-style-type: square;
 	list-style-position: inside;
+	font-weight: 500;
+	font-size: 0.9rem;
 	text-align: justify;
 }
 
@@ -211,4 +256,16 @@ ul li {
 	aside {
 		padding: 1rem;
 	}
+}
+
+/* ANIMATION */
+
+.result, .penjelasan, .penyakit {
+	opacity: 0;
+	transition: 1s all ;
+}
+
+.fadeIn {
+	opacity: 1;
+	animation: fadeIn .7s;
 }

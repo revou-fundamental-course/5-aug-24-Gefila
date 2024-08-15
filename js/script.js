@@ -51,9 +51,11 @@ const pria = document.getElementById("pria");
 const wanita = document.getElementById("wanita");
 const skor = document.querySelector(".skor");
 const statusBmi = document.querySelector(".status");
-const penjelasan = document.querySelector(".penjelasan");
+const penjelasan = document.querySelector(".penjelasan p");
 const listPenyakit = document.querySelector(".list-penyakit");
 const reset = document.getElementById("reset");
+const result = document.querySelector(".result");
+const animasi = document.querySelectorAll(".animasi");
 
 // Fungsi untuk menghitung BMI dan menampilkan hasilnya
 function hitungBmi() {
@@ -83,6 +85,7 @@ function hitungBmi() {
 			penyakit.textContent = normal;
 			listPenyakit.appendChild(penyakit);
 		}
+		result.classList.add("fadeIn");
 	} else if (bmi >= 25 && bmi <= 29.9) {
 		skor.textContent = bmi.toFixed(1);
 		statusBmi.textContent = dataBmi.berlebih.status;
@@ -92,6 +95,7 @@ function hitungBmi() {
 			penyakit.textContent = berlebih;
 			listPenyakit.appendChild(penyakit);
 		}
+		result.classList.add("fadeIn");
 	} else if (bmi >= 30) {
 		skor.textContent = bmi.toFixed(1);
 		statusBmi.textContent = dataBmi.obesitas.status;
@@ -102,7 +106,7 @@ function hitungBmi() {
 			listPenyakit.appendChild(penyakit);
 		}
 	}
-	resetForm();
+	showAnimasi();
 	return false;
 }
 
@@ -118,7 +122,22 @@ function resetForm() {
 // Fungsi untuk mereset hasil BMI yang ditampilkan
 function resetHasil() {
 	resetForm();
-	skor.textContent = "0.0";
-	statusBmi.textContent = "Hitung BMI";
-	listPenyakit.innerHTML = "";
+	clearAnimasi();
+}
+
+function showAnimasi() {
+	animasi.forEach((animasi, index) => {
+		setTimeout(() => {
+			animasi.classList.add("fadeIn");
+		}, 1000 * index);
+	});
+}
+
+function clearAnimasi() {
+	const reversedAnimasi = [...animasi].reverse();
+	reversedAnimasi.forEach((animasi, index) => {
+		setTimeout(() => {
+			animasi.classList.remove("fadeIn");
+		}, 500 * index);
+	});
 }
